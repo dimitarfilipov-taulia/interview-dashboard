@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { eventBus } from '../lib/eventBus';
+import { eventBus } from '../../lib/eventBus';
 
 export function NotificationFeed() {
   const [notifications, setNotifications] = useState([]);

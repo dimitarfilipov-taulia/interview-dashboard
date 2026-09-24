@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { StatsCounter } from './components/StatsCounter';
-import { NotificationFeed } from './components/NotificationFeed';
-import PasswordStrengthChecker from './components/PasswordStrengthChecker';
+import { StatsCounter } from './components/Dashboard/StatsCounter';
+import { NotificationFeed } from './components/Dashboard/NotificationFeed';
+import PasswordStrengthChecker from './components/PasswordStrengthChecker/PasswordStrengthChecker';
+import RandomQuoteGenerator from './components/RandomQuoteGenerator/RandomQuoteGenerator';
 import { eventBus } from './lib/eventBus';
 import { getRandomNotification } from './lib/mockApi';
 
@@ -38,10 +39,10 @@ export default function App() {
             Password Checker
           </button>
           <button
-            className={view === 'settings' ? 'nav-btn active' : 'nav-btn'}
-            onClick={() => setView('settings')}
+            className={view === 'quote-generator' ? 'nav-btn active' : 'nav-btn'}
+            onClick={() => setView('quote-generator')}
           >
-            Settings
+            Quote Generator
           </button>
         </nav>
       </header>
@@ -78,6 +79,19 @@ export default function App() {
           />
           <h2>Password Strength Checker</h2>
           <PasswordStrengthChecker />
+        </main>
+      )}
+
+      {view === 'quote-generator' && (
+        <main className="settings-page">
+          <img
+            alt="Password Strength Checker — Real-Time Validation demo"
+            className="size-full object-cover"
+            style={{width: 500}}
+            src="/gifs/react-coding-problem-47.gif"
+          />
+          <h2>Random Quote Generator</h2>
+          <RandomQuoteGenerator />
         </main>
       )}
     </div>
