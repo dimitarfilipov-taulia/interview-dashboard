@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
-import { StatsCounter } from './components/Dashboard/StatsCounter';
-import { NotificationFeed } from './components/Dashboard/NotificationFeed';
-import PasswordStrengthChecker from './components/PasswordStrengthChecker/PasswordStrengthChecker';
-import RandomQuoteGenerator from './components/RandomQuoteGenerator/RandomQuoteGenerator';
+import {
+  StatsCounter,
+  NotificationFeed,
+  PasswordStrengthChecker,
+  RandomQuoteGenerator,
+  PaginatedGallery
+} from './components';
 import { eventBus } from './lib/eventBus';
 import { getRandomNotification } from './lib/mockApi';
 
@@ -43,6 +46,12 @@ export default function App() {
             onClick={() => setView('quote-generator')}
           >
             Quote Generator
+          </button>
+          <button
+            className={view === 'paginated-gallery' ? 'nav-btn active' : 'nav-btn'}
+            onClick={() => setView('paginated-gallery')}
+          >
+            Paginated Gallery
           </button>
         </nav>
       </header>
@@ -92,6 +101,13 @@ export default function App() {
           />
           <h2>Random Quote Generator</h2>
           <RandomQuoteGenerator />
+        </main>
+      )}
+
+      {view === 'paginated-gallery' && (
+        <main className="settings-page">
+          <h2>Paginated Gallery</h2>
+          <PaginatedGallery />
         </main>
       )}
     </div>

@@ -8,6 +8,10 @@ A set of interview questions designed to test your knowledge in React and fronte
 - Vite 5.4.2
 - JavaScript (ES6+)
 
+## Prerequisites
+
+- Node.js 20 or higher
+
 ## Installation
 
 Install the project dependencies:
