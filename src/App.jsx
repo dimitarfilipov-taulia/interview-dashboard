@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { StatsCounter } from './components/StatsCounter';
 import { NotificationFeed } from './components/NotificationFeed';
+import PasswordStrengthChecker from './components/PasswordStrengthChecker';
 import { eventBus } from './lib/eventBus';
 import { getRandomNotification } from './lib/mockApi';
 
@@ -21,7 +22,7 @@ export default function App() {
       <header className="app-header">
         <div className="app-brand">
           <span className="app-logo">◈</span>
-          <span className="app-name">AdminDash</span>
+          <span className="app-name">Interview Questions</span>
         </div>
         <nav className="app-nav">
           <button
@@ -29,6 +30,12 @@ export default function App() {
             onClick={() => setView('dashboard')}
           >
             Dashboard
+          </button>
+          <button
+            className={view === 'password-checker' ? 'nav-btn active' : 'nav-btn'}
+            onClick={() => setView('password-checker')}
+          >
+            Password Checker
           </button>
           <button
             className={view === 'settings' ? 'nav-btn active' : 'nav-btn'}
@@ -61,10 +68,16 @@ export default function App() {
         </main>
       )}
 
-      {view === 'settings' && (
+      {view === 'password-checker' && (
         <main className="settings-page">
-          <h2>Settings</h2>
-          <p>Nothing to configure yet.</p>
+          <img
+            alt="Password Strength Checker — Real-Time Validation demo"
+            className="size-full object-cover"
+            style={{width: 500}}
+            src="/gifs/react-coding-problem-40.gif"
+          />
+          <h2>Password Strength Checker</h2>
+          <PasswordStrengthChecker />
         </main>
       )}
     </div>
