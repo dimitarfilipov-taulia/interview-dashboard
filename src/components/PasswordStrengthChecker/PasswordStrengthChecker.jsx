@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 // TODO: Build the ENTIRE password strength checker UI yourself — nothing
 // is pre-built. You need to create:
@@ -22,5 +22,5 @@ import { useState } from "react";
 //
 
 export default function PasswordStrengthChecker() {
-  return null;
+  return <div>Your Code Here</div>;
 }
