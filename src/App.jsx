@@ -98,7 +98,7 @@ export default function App() {
       {view === 'quote-generator' && (
         <main className="settings-page">
           <img
-            alt="Password Strength Checker — Real-Time Validation demo"
+            alt="Password Strength Checker — Quote Generator demo"
             className="size-full object-cover"
             style={{ width: 500 }}
             src="/gifs/react-coding-problem-47.gif"
@@ -111,7 +111,7 @@ export default function App() {
       {view === 'paginated-gallery' && (
         <main className="settings-page">
           <img
-            alt="Password Strength Checker — Real-Time Validation demo"
+            alt="Password Strength Checker — Paginated Gallery demo"
             className="size-full object-cover"
             style={{ width: 500 }}
             src="/gifs/react-coding-problem-35.gif"
